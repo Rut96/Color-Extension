@@ -1,0 +1,282 @@
+.layout {
+    width: 380px;
+    min-height: 500px;
+    background: var(--bg-gradient);
+    padding: 24px;
+    font-family: "Parkinsans", serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.theme-toggle:hover {
+    background: var(--format-button-hover);
+} 
+
+.pick-button {
+    background: var(--button-bg);
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pick-button:hover {
+    background: var(--button-hover);
+}
+
+.color-display {
+    background: var(--bg-surface);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.preview-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.color-preview {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+}
+
+.format-toggles {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+}
+
+.format-button {
+    background: var(--format-button-bg);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: var(--format-button-text);
+    cursor: pointer;
+    flex: 1;
+}
+
+.format-button:hover {
+    background: var(--format-button-hover);
+}
+
+.format-button.active {
+    background: var(--button-bg);
+    color: white;
+}
+
+.color-value {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px;
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: var(--text-primary);
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.color-value:hover {
+    background: var(--input-hover);
+}
+
+.recent-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.recent-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+
+.clear-all {
+    font-size: 13px;
+    color: var(--delete-button);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.clear-all:hover {
+    background: var(--delete-hover-bg);
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    padding: 4px;
+}
+
+.recent-color-wrapper {
+    position: relative;
+}
+
+.recent-color {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.recent-color:hover {
+    transform: scale(1.05);
+}
+
+.delete-color {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background: var(--delete-button);
+    border: 2px solid var(--bg-surface);
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 0;
+    line-height: 1;
+}
+
+.recent-color-wrapper:hover .delete-color {
+    opacity: 1;
+}
+
+.delete-color:hover {
+    background: var(--delete-button-hover);
+}
+
+.copy-feedback {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-feedback.visible {
+    opacity: 1;
+}
+
+button {
+    user-select: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--button-bg);
+    outline-offset: 2px;
+}
+
+@media (max-width: 400px) {
+    .layout {
+        min-height: 100vh;
+        padding: 16px;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .preview-section {
+        gap: 12px;
+    }
+
+    .format-toggles {
+        gap: 6px;
+    }
+
+    .format-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

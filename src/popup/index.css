@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@500&family=Parkinsans:wght@300..800&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(145deg, #ffffff, #f8fafc);
+    --bg-surface: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #64748b;
+    --border-color: #e2e8f0;
+    --button-bg: #2563eb;
+    --button-hover: #1d4ed8;
+    --input-bg: #f8fafc;
+    --input-hover: #f1f5f9;
+    --format-button-bg: #f1f5f9;
+    --format-button-text: #475569;
+    --format-button-hover: #e2e8f0;
+    --delete-button: #ef4444;
+    --delete-hover-bg: #fee2e2;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+    --bg-gradient: linear-gradient(145deg, #0f172a, #1e293b);
+    --bg-surface: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    --border-color: #334155;
+    --button-bg: #3b82f6;
+    --button-hover: #2563eb;
+    --input-bg: #0f172a;
+    --input-hover: #1e293b;
+    --format-button-bg: #1e293b;
+    --format-button-text: #cbd5e1;
+    --format-button-hover: #334155;
+    --delete-button: #dc2626;
+    --delete-hover-bg: #450a0a;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Parkinsans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
